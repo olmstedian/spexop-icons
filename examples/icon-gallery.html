@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@spexop/icons - Complete Gallery (169 Icons)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .controls {
+      padding: 2rem;
+      background: #f8f9fa;
+      border-bottom: 1px solid #e9ecef;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .size-control {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .size-btn {
+      padding: 0.5rem 1rem;
+      border: 2px solid #e9ecef;
+      background: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .size-btn:hover {
+      border-color: #667eea;
+      background: #f8f9ff;
+    }
+
+    .size-btn.active {
+      border-color: #667eea;
+      background: #667eea;
+      color: white;
+    }
+
+    .content {
+      padding: 2rem;
+    }
+
+    .category {
+      margin-bottom: 3rem;
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #667eea;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .category-count {
+      font-size: 0.9rem;
+      color: #6c757d;
+      font-weight: 400;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1rem;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem;
+      border-radius: 12px;
+      background: #f8f9fa;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .icon-item:hover {
+      background: #e9ecef;
+      transform: translateY(-2px);
+      border-color: #667eea;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+    }
+
+    .icon-item svg {
+      margin-bottom: 0.75rem;
+      transition: transform 0.2s;
+    }
+
+    .icon-item:hover svg {
+      transform: scale(1.1);
+    }
+
+    .icon-name {
+      font-size: 0.75rem;
+      color: #495057;
+      text-align: center;
+      word-break: break-word;
+      font-weight: 500;
+    }
+
+    .copied-toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #28a745;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transform: translateY(100px);
+      transition: all 0.3s;
+      pointer-events: none;
+      font-weight: 500;
+    }
+
+    .copied-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #6c757d;
+    }
+
+    .no-results h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.75rem;
+      }
+
+      .stats {
+        gap: 1.5rem;
+      }
+
+      .stat-number {
+        font-size: 1.5rem;
+      }
+
+      .icon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 0.75rem;
+      }
+
+      .icon-item {
+        padding: 1rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>@spexop/icons</h1>
+      <p>Comprehensive icon library for modern web applications</p>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number">169</span>
+          <span class="stat-label">Total Icons</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">14</span>
+          <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">~10KB</span>
+          <span class="stat-label">Gzipped</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="search" 
+          placeholder="Search icons... (try 'user', 'arrow', 'mail')"
+        />
+      </div>
+      <div class="size-control">
+        <span style="color: #6c757d; font-size: 0.9rem;">Size:</span>
+        <button class="size-btn" data-size="16">16</button>
+        <button class="size-btn active" data-size="24">24</button>
+        <button class="size-btn" data-size="32">32</button>
+        <button class="size-btn" data-size="48">48</button>
+      </div>
+    </div>
+
+    <div class="content" id="content">
+      <!-- Icons will be loaded here -->
+    </div>
+  </div>
+
+  <div class="copied-toast" id="toast">
+    Copied icon name to clipboard!
+  </div>
+
+  <script>
+    const iconData = {
+      'Navigation & Arrows': ['arrow-up', 'arrow-down', 'arrow-left', 'arrow-right', 'chevron-up', 'chevron-down', 'chevron-left', 'chevron-right', 'chevrons-up', 'chevrons-down', 'chevrons-left', 'chevrons-right', 'home', 'external-link', 'corner-up-left', 'corner-up-right'],
+      'Actions & Editing': ['plus', 'minus', 'x', 'check', 'check-circle', 'edit', 'edit-2', 'trash', 'trash-2', 'copy', 'save', 'refresh', 'rotate-cw', 'rotate-ccw', 'undo', 'redo'],
+      'Communication': ['mail', 'message-circle', 'message-square', 'phone', 'phone-call', 'bell', 'bell-off', 'inbox', 'send'],
+      'Media & Entertainment': ['play', 'pause', 'stop', 'skip-back', 'skip-forward', 'volume', 'volume-1', 'volume-2', 'volume-x', 'music', 'image', 'video', 'camera', 'film'],
+      'Files & Folders': ['file', 'file-text', 'file-plus', 'folder', 'folder-open', 'upload', 'download', 'upload-cloud', 'download-cloud', 'paperclip'],
+      'UI Controls': ['search', 'filter', 'settings', 'sliders', 'menu', 'more-horizontal', 'more-vertical', 'grid', 'list', 'maximize', 'minimize', 'zoom-in', 'zoom-out', 'eye', 'eye-off'],
+      'Social & Community': ['share', 'share-2', 'heart', 'star', 'bookmark', 'thumbs-up', 'thumbs-down', 'users', 'user', 'user-plus', 'user-minus', 'user-check', 'user-x'],
+      'Commerce & Shopping': ['shopping-cart', 'shopping-bag', 'credit-card', 'tag', 'gift', 'percent', 'dollar-sign'],
+      'System & Status': ['alert-circle', 'alert-triangle', 'info', 'help-circle', 'x-circle', 'check-square', 'square', 'circle', 'loader', 'clock', 'calendar'],
+      'Forms & Input': ['lock', 'unlock', 'log-in', 'log-out', 'key', 'shield', 'shield-off'],
+      'Layout & Structure': ['layout', 'sidebar', 'columns', 'rows', 'square-stack', 'layers', 'box'],
+      'Devices & Technology': ['smartphone', 'tablet', 'laptop', 'monitor', 'tv', 'printer', 'wifi', 'wifi-off', 'bluetooth', 'battery', 'battery-charging'],
+      'Text & Typography': ['type', 'bold', 'italic', 'underline', 'align-left', 'align-center', 'align-right', 'align-justify'],
+      'Additional Essentials': ['link', 'link-2', 'hash', 'at-sign', 'code', 'command', 'cpu', 'database', 'server', 'cloud', 'cloud-off', 'globe', 'map', 'map-pin', 'navigation', 'compass', 'anchor', 'award', 'flag', 'target', 'activity', 'trending-up', 'trending-down', 'bar-chart', 'pie-chart']
+    };
+
+    let currentSize = 24;
+    const content = document.getElementById('content');
+    const search Input = document.getElementById('search');
+    const toast = document.getElementById('toast');
+
+    function toPascalCase(str) {
+      return str.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
+    }
+
+    function renderIcons(filterText = '') {
+      content.innerHTML = '';
+      let totalShown = 0;
+
+      for (const [category, icons] of Object.entries(iconData)) {
+        const filteredIcons = icons.filter(icon => 
+          icon.includes(filterText.toLowerCase()) || 
+          toPascalCase(icon).toLowerCase().includes(filterText.toLowerCase())
+        );
+
+        if (filteredIcons.length === 0) continue;
+
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'category';
+
+        const titleDiv = document.createElement('div');
+        titleDiv.className = 'category-title';
+        titleDiv.innerHTML = `${category} <span class="category-count">(${filteredIcons.length})</span>`;
+        categoryDiv.appendChild(titleDiv);
+
+        const gridDiv = document.createElement('div');
+        gridDiv.className = 'icon-grid';
+
+        filteredIcons.forEach(iconName => {
+          const iconDiv = document.createElement('div');
+          iconDiv.className = 'icon-item';
+          iconDiv.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="${currentSize}" height="${currentSize}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Icon will be loaded here -->
+            </svg>
+            <span class="icon-name">${toPascalCase(iconName)}</span>
+          `;
+          iconDiv.onclick = () => copyName(toPascalCase(iconName));
+          gridDiv.appendChild(iconDiv);
+          totalShown++;
+        });
+
+        categoryDiv.appendChild(gridDiv);
+        content.appendChild(categoryDiv);
+      }
+
+      if (totalShown === 0) {
+        content.innerHTML = `
+          <div class="no-results">
+            <h3>No icons found</h3>
+            <p>Try a different search term</p>
+          </div>
+        `;
+      }
+    }
+
+    function copyName(name) {
+      navigator.clipboard.writeText(name).then(() => {
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+      });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      renderIcons(e.target.value);
+    });
+
+    document.querySelectorAll('.size-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentSize = parseInt(btn.dataset.size);
+        renderIcons(searchInput.value);
+      });
+    });
+
+    // Initial render
+    renderIcons();
+  </script>
+</body>
+</html>
+
+

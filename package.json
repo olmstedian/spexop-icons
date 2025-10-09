@@ -1,0 +1,77 @@
+{
+  "name": "@spexop/icons",
+  "version": "0.1.0",
+  "description": "Professional icon library with 262 carefully curated icons for modern web applications. Includes filled variants and popular brand icons.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "pnpm run clean && pnpm run build:icons && pnpm run build:lib",
+    "build:icons": "tsx scripts/build-icons.ts",
+    "build:lib": "tsup",
+    "clean": "rm -rf dist",
+    "dev": "tsup --watch",
+    "lint": "eslint src --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "react",
+    "icons",
+    "svg",
+    "spexop",
+    "design-system",
+    "components",
+    "typescript",
+    "tree-shakeable",
+    "accessible",
+    "brand-icons",
+    "social-media",
+    "ui-icons"
+  ],
+  "author": {
+    "name": "Cuneyt Cakar",
+    "email": "ccakar@spexop.com",
+    "url": "https://www.spexop.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spexop/icons"
+  },
+  "homepage": "https://github.com/spexop/icons#readme",
+  "bugs": {
+    "url": "https://github.com/spexop/icons/issues"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.45",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "react": "^18.2.0",
+    "svgo": "^3.2.0",
+    "tsup": "^8.0.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "pnpm@8.15.0"
+}

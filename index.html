@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@spexop/icons - All 169 Icons Showcase</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .header .subtitle {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      margin-bottom: 2rem;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      display: block;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .controls {
+      padding: 2rem;
+      background: #f8f9fa;
+      border-bottom: 2px solid #e9ecef;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 300px;
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6c757d;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3rem;
+      border: 2px solid #e9ecef;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: all 0.2s;
+      background: white;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .size-control {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      background: white;
+      padding: 0.5rem;
+      border-radius: 12px;
+      border: 2px solid #e9ecef;
+    }
+
+    .size-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #495057;
+      margin-right: 0.5rem;
+    }
+
+    .size-btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #6c757d;
+    }
+
+    .size-btn:hover {
+      background: #f8f9fa;
+      color: #667eea;
+    }
+
+    .size-btn.active {
+      background: #667eea;
+      color: white;
+    }
+
+    .content {
+      padding: 2rem;
+      max-height: calc(100vh - 400px);
+      overflow-y: auto;
+    }
+
+    .content::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .content::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    .content::-webkit-scrollbar-thumb {
+      background: #667eea;
+      border-radius: 5px;
+    }
+
+    .category {
+      margin-bottom: 3rem;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid #e9ecef;
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #667eea;
+      flex: 1;
+    }
+
+    .category-count {
+      font-size: 1rem;
+      color: white;
+      background: #667eea;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.75rem 1rem;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 2px solid #e9ecef;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .icon-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .icon-item:hover {
+      transform: translateY(-8px);
+      border-color: #667eea;
+      box-shadow: 0 20px 25px -5px rgba(102, 126, 234, 0.2), 0 10px 10px -5px rgba(102, 126, 234, 0.1);
+    }
+
+    .icon-item:hover::before {
+      opacity: 0.05;
+    }
+
+    .icon-item svg {
+      margin-bottom: 1rem;
+      transition: all 0.3s;
+      position: relative;
+      z-index: 1;
+      stroke: #495057;
+    }
+
+    .icon-item:hover svg {
+      transform: scale(1.2) rotate(5deg);
+      stroke: #667eea;
+    }
+
+    .icon-name {
+      font-size: 0.8rem;
+      color: #495057;
+      text-align: center;
+      word-break: break-word;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s;
+    }
+
+    .icon-item:hover .icon-name {
+      color: #667eea;
+    }
+
+    .copied-indicator {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: #28a745;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.2s;
+      z-index: 2;
+    }
+
+    .icon-item.copied .copied-indicator {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 5rem 2rem;
+      color: #6c757d;
+    }
+
+    .no-results svg {
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+
+    .no-results h3 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      color: #495057;
+    }
+
+    .no-results p {
+      font-size: 1.1rem;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: white;
+      padding: 1.25rem 1.75rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
+      font-weight: 600;
+      font-size: 1rem;
+      opacity: 0;
+      transform: translateY(100px) scale(0.9);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      pointer-events: none;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .total-count {
+      text-align: center;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: #495057;
+      font-weight: 600;
+    }
+
+    .total-count .highlight {
+      color: #667eea;
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .stats {
+        gap: 2rem;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      .icon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 1rem;
+      }
+
+      .icon-item {
+        padding: 1.25rem 0.75rem;
+      }
+
+      .controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-box {
+        min-width: auto;
+      }
+
+      .size-control {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-content">
+        <h1>@spexop/icons</h1>
+        <p class="subtitle">Complete Icon Library Showcase</p>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-number">262</span>
+            <span class="stat-label">Total Icons</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">17</span>
+            <span class="stat-label">Categories</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Brand Icons</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">~17KB</span>
+            <span class="stat-label">Gzipped</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="search-box">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input 
+          type="text" 
+          id="search" 
+          placeholder="Search icons... (try 'user', 'arrow', 'mail', 'heart')"
+        />
+      </div>
+      <div class="size-control">
+        <span class="size-label">Size:</span>
+        <button class="size-btn" data-size="16">16px</button>
+        <button class="size-btn active" data-size="24">24px</button>
+        <button class="size-btn" data-size="32">32px</button>
+        <button class="size-btn" data-size="48">48px</button>
+      </div>
+    </div>
+
+    <div class="content" id="content">
+      <div class="total-count">
+        Showing <span class="highlight" id="showing-count">262</span> of <span class="highlight">262</span> icons
+      </div>
+      <!-- Icons will be loaded here -->
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+    <span id="toast-text">Copied to clipboard!</span>
+  </div>
+
+  <script src="icons-data.js"></script>
+  <script>
+    let currentSize = 24;
+    const content = document.getElementById('content');
+    const searchInput = document.getElementById('search');
+    const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toast-text');
+    const showingCount = document.getElementById('showing-count');
+
+    function toPascalCase(str) {
+      return str.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
+    }
+
+    function renderIcons(filterText = '') {
+      const totalCountDiv = content.querySelector('.total-count');
+      content.innerHTML = '';
+      if (totalCountDiv) content.appendChild(totalCountDiv);
+      
+      let totalShown = 0;
+
+      Object.entries(window.iconData).forEach(([category, icons]) => {
+        const filteredIcons = icons.filter(icon => {
+          const pascalName = toPascalCase(icon);
+          const searchLower = filterText.toLowerCase();
+          return icon.includes(searchLower) || 
+                 pascalName.toLowerCase().includes(searchLower) ||
+                 category.toLowerCase().includes(searchLower);
+        });
+
+        if (filteredIcons.length === 0) return;
+
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'category';
+
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'category-header';
+        headerDiv.innerHTML = `
+          <div class="category-title">${category}</div>
+          <div class="category-count">${filteredIcons.length}</div>
+        `;
+        categoryDiv.appendChild(headerDiv);
+
+        const gridDiv = document.createElement('div');
+        gridDiv.className = 'icon-grid';
+
+        filteredIcons.forEach(iconName => {
+          const pascalName = toPascalCase(iconName);
+          const iconDiv = document.createElement('div');
+          iconDiv.className = 'icon-item';
+          iconDiv.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="${currentSize}" height="${currentSize}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              ${window.iconPaths[iconName] || ''}
+            </svg>
+            <span class="icon-name">${pascalName}</span>
+            <span class="copied-indicator">✓ Copied</span>
+          `;
+          iconDiv.onclick = () => copyName(pascalName, iconDiv);
+          gridDiv.appendChild(iconDiv);
+          totalShown++;
+        });
+
+        categoryDiv.appendChild(gridDiv);
+        content.appendChild(categoryDiv);
+      });
+
+      showingCount.textContent = totalShown;
+
+      if (totalShown === 0) {
+        content.innerHTML = `
+          <div class="no-results">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <h3>No icons found</h3>
+            <p>Try a different search term</p>
+          </div>
+        `;
+      }
+    }
+
+    function copyName(name, element) {
+      navigator.clipboard.writeText(name).then(() => {
+        element.classList.add('copied');
+        setTimeout(() => element.classList.remove('copied'), 1500);
+        
+        toastText.textContent = `Copied "${name}" to clipboard!`;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+      });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      renderIcons(e.target.value);
+    });
+
+    document.querySelectorAll('.size-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentSize = parseInt(btn.dataset.size);
+        renderIcons(searchInput.value);
+      });
+    });
+
+    // Initial render
+    renderIcons();
+  </script>
+</body>
+</html>
+
