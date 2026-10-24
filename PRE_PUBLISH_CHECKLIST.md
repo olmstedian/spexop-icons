@@ -1,3 +1,5 @@
+> **Historical document — not current release guidance.** See [README](README.md) and [2026-10-24 verification](VERIFICATION.md) for current counts, source/npm differences, build evidence and unresolved licensing. Earlier production-ready, browser, bundle-size and publishing claims below have not been revalidated and do not authorize publication.
+
 # Pre-Publish Checklist - @spexop/icons v0.1.0
 
 ## ✅ Final Verification Before Publishing
@@ -119,7 +121,7 @@
 3. **Push to GitHub**
 
    ```bash
-    git remote add origin https://github.com/spexop/icons.git
+    git remote add origin https://github.com/olmstedian/spexop-icons.git
    git branch -M main
    git push -u origin main
    git tag v0.1.0
@@ -217,7 +219,7 @@ This package has been thoroughly verified and is production-ready for:
 **Built by Spexop**  
 Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
 📧 <ccakar@spexop.com>  
-🌐 [www.spexop.com](https://www.spexop.com)
+🌐 [www.spexop.com](https://spexop.com)
 
 **Release Date**: October 9, 2025  
 **Version**: 0.1.0  

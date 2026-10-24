@@ -1,3 +1,5 @@
+> **Historical document — not current release guidance.** See [README](README.md) and [2026-10-24 verification](VERIFICATION.md) for current counts, source/npm differences, build evidence and unresolved licensing. Earlier production-ready, browser, bundle-size and publishing claims below have not been revalidated and do not authorize publication.
+
 # 🎉 FINAL VERIFICATION - @spexop/icons v0.1.0
 
 ## ✅ PRODUCTION READY - All Systems Green
@@ -148,7 +150,7 @@ git init
 git add .
 git commit -m "feat: initial release v0.1.0 - 262 icons"
 git branch -M main
-git remote add origin https://github.com/spexop/icons.git
+git remote add origin https://github.com/olmstedian/spexop-icons.git
 git push -u origin main
 git tag v0.1.0
 git push origin --tags
@@ -215,7 +217,7 @@ import { Home, Settings, HeartFilled, Github } from '@spexop/icons';
 3. **Push to GitHub**
 
    ```bash
-   git remote add origin https://github.com/spexop/icons.git
+   git remote add origin https://github.com/olmstedian/spexop-icons.git
    git branch -M main
    git push -u origin main
    git tag v0.1.0
@@ -273,8 +275,8 @@ import { Home, Settings, HeartFilled, Github } from '@spexop/icons';
 
 ## 📞 Support
 
-- **Issues**: <https://github.com/spexop/icons/issues>
-- **Discussions**: <https://github.com/spexop/icons/discussions>
+- **Issues**: <https://github.com/olmstedian/spexop-icons/issues>
+- **Discussions**: <https://github.com/olmstedian/spexop-icons/discussions>
 - **Email**: <ccakar@spexop.com>
 
 ---
@@ -296,7 +298,7 @@ This package represents a **production-grade, professional icon library** ready 
 **Built by Spexop**  
 Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
 📧 <ccakar@spexop.com>  
-🌐 [www.spexop.com](https://www.spexop.com)
+🌐 [www.spexop.com](https://spexop.com)
 
 **Package Version**: 0.1.0  
 **Release Status**: ✅ READY TO PUBLISH  

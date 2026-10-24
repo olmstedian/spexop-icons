@@ -48,4 +48,4 @@ If you have suggestions on how this process could be improved, please submit a p
 **Built by Spexop**  
 Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
 📧 <ccakar@spexop.com>  
-🌐 [www.spexop.com](https://www.spexop.com)
+🌐 [www.spexop.com](https://spexop.com)

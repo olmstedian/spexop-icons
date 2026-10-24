@@ -83,4 +83,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 **Built by Spexop**  
 Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
 📧 <ccakar@spexop.com>  
-🌐 [www.spexop.com](https://www.spexop.com)
+🌐 [www.spexop.com](https://spexop.com)

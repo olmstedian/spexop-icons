@@ -1,3 +1,5 @@
+> **Historical document — not current release guidance.** See [README](README.md) and [2026-10-24 verification](VERIFICATION.md) for current counts, source/npm differences, build evidence and unresolved licensing. Earlier production-ready, browser, bundle-size and publishing claims below have not been revalidated and do not authorize publication.
+
 # 🚀 START HERE - @spexop/icons Publishing Guide
 
 Welcome! This document will guide you through publishing your icon library.
@@ -54,7 +56,7 @@ git commit -m "feat: initial release v0.1.0 - 262 professional icons"
 # Create repo on GitHub in Spexop org
 # Name: icons
 # Then push:
-git remote add origin https://github.com/spexop/icons.git
+git remote add origin https://github.com/olmstedian/spexop-icons.git
 git branch -M main
 git push -u origin main
 git tag v0.1.0
@@ -73,7 +75,7 @@ pnpm publish --access public
 
 ### Step 3: GitHub Release (2 minutes)
 
-1. Visit: https://github.com/spexop/icons/releases/new
+1. Visit: https://github.com/olmstedian/spexop-icons/releases/new
 2. Tag: v0.1.0
 3. Title: "v0.1.0 - Initial Release"
 4. Copy description from CHANGELOG.md
@@ -173,4 +175,4 @@ Everything is verified and ready to publish. No mistakes, no compromises, profes
 **Built by Spexop**  
 Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
 📧 ccakar@spexop.com  
-🌐 [www.spexop.com](https://www.spexop.com)
+🌐 [www.spexop.com](https://spexop.com)
