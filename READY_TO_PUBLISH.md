@@ -1,3 +1,5 @@
+> **Historical document — not current release guidance.** See [README](README.md) and [2026-10-24 verification](VERIFICATION.md) for current counts, source/npm differences, build evidence and unresolved licensing. Earlier production-ready, browser, bundle-size and publishing claims below have not been revalidated and do not authorize publication.
+
 # 🎉 @spexop/icons - READY TO PUBLISH
 
 ## ✅ FINAL STATUS: 100% PRODUCTION READY
@@ -91,7 +93,7 @@ git commit -m "feat: initial release v0.1.0
 # Public repository
 
 # Push to GitHub
-git remote add origin https://github.com/spexop/icons.git
+git remote add origin https://github.com/olmstedian/spexop-icons.git
 git branch -M main
 git push -u origin main
 
@@ -115,7 +117,7 @@ pnpm publish --access public
 
 ### 3️⃣ Create GitHub Release
 
-1. Go to: https://github.com/spexop/icons/releases/new
+1. Go to: https://github.com/olmstedian/spexop-icons/releases/new
 2. Choose tag: `v0.1.0`
 3. Release title: **v0.1.0 - Initial Release**
 4. Description: Copy from `CHANGELOG.md` (lines 8-65)
@@ -174,7 +176,7 @@ export default App;
 
 ### Verify on GitHub
 
-- [ ] Repository: https://github.com/spexop/icons
+- [ ] Repository: https://github.com/olmstedian/spexop-icons
 - [ ] All files pushed
 - [ ] README displays with badges
 - [ ] Topics added (react, icons, typescript, svg)
@@ -276,7 +278,7 @@ This package is ready for:
 **Built by Spexop**  
 Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
 📧 ccakar@spexop.com  
-🌐 [www.spexop.com](https://www.spexop.com)
+🌐 [www.spexop.com](https://spexop.com)
 
 **Version**: 0.1.0  
 **Status**: ✅ **PUBLISH READY**  

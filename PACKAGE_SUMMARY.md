@@ -1,3 +1,5 @@
+> **Historical document — not current release guidance.** See [README](README.md) and [2026-10-24 verification](VERIFICATION.md) for current counts, source/npm differences, build evidence and unresolved licensing. Earlier production-ready, browser, bundle-size and publishing claims below have not been revalidated and do not authorize publication.
+
 # @spexop/icons - Package Summary
 
 ## ✨ What's Been Created
@@ -175,7 +177,7 @@ The package is fully functional and ready for:
 **Built by Spexop**  
 Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
 📧 <ccakar@spexop.com>  
-🌐 [www.spexop.com](https://www.spexop.com)
+🌐 [www.spexop.com](https://spexop.com)
 
 Version: 0.1.0  
 License: MIT  

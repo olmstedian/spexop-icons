@@ -1,232 +1,69 @@
 # @spexop/icons
 
-[![npm version](https://img.shields.io/npm/v/@spexop/icons.svg?style=flat-square)](https://www.npmjs.com/package/@spexop/icons)
-[![npm downloads](https://img.shields.io/npm/dm/@spexop/icons.svg?style=flat-square)](https://www.npmjs.com/package/@spexop/icons)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](./LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg?style=flat-square)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-%3E%3D16.8-61dafb.svg?style=flat-square)](https://reactjs.org/)
+React SVG icons from the Spexop UI project.
 
-A modern, optimized icon library for the Spexop Design System. Built with React, TypeScript, and tree-shaking support.
+**Status: source and license review in progress.** This repository is an existing icon implementation, not a verified release of the rebuilt Spexop UI project. New Spexop UI core capabilities will be free and open source. There is no PRO or paid feature tier.
 
-**262 carefully curated icons** (including 15 filled variants + 30 brand icons) with a minimal, contemporary design perfect for modern web applications.
+[Spexop UI organization](https://github.com/spexop-ui) · [Sponsor Spexop UI](https://github.com/sponsors/spexop-ui) · [Source](https://github.com/olmstedian/spexop-icons)
 
-## Features
+## What is verified
 
-- 🎨 **Customizable**: Size, color, and all SVG props supported
-- 🌲 **Tree-shakeable**: Only import icons you use
-- 📦 **Optimized**: SVGs are automatically optimized with SVGO
-- 🔷 **TypeScript**: Full type safety with TypeScript definitions
-- ♿ **Accessible**: Built-in accessibility support with ARIA attributes
-- ⚡ **Lightweight**: Minimal bundle size impact (~10KB gzipped)
-- 📱 **Mobile-Friendly**: Clear and recognizable at all sizes
-- 🎯 **Comprehensive**: 262 icons across 20+ categories
-- 🎨 **Variant Support**: Filled versions of popular icons (heart, star, bookmark, etc.)
-- 🏢 **Brand Icons**: 30+ social media and tech company logos (Facebook, Twitter, GitHub, etc.)
+At source commit `717b06f760d3c89f8141494647763e99d1304ae9` on 2026-10-24:
 
-## 📋 Icon Catalog
+- `assets/icons/*.svg` contains **262 SVG files**, including **15** names ending in `-filled.svg`.
+- `src/icons/*.tsx` contains **263 files**. `Close.tsx` is an extra legacy file without a corresponding source SVG; it is not exported by the generated build.
+- The build exports **262 icon components**, plus the base `Icon` component. A TypeScript index line count is not an icon count; no 269/281 icon total is established by this source.
+- Frozen-lockfile installation, typecheck, lint and build passed in an isolated checkout. A locally packed consumer rendered `Home`, `StarFilled` and `User` with React 18.3.1, and its TSX example typechecked with TypeScript 5.9.3 and `esModuleInterop` enabled.
+- No `test` script exists. These checks are not a browser, accessibility, performance or full React-version compatibility certification.
 
-**[View all 262 icons →](./ICONS.md)**
+See [verification details](VERIFICATION.md) and the [historical icon catalog](ICONS.md). Category totals and brand ownership in that catalog are still under review.
 
-### Icon Categories
+## Package status and installation
 
-- **Navigation & Arrows** (27) - Including diagonal arrows and circle variants
-- **Actions & Editing** (14) - Common operations
-- **Communication** (11) - Messaging and notifications
-- **Media & Entertainment** (14) - Playback and content
-- **Files & Folders** (13) - File management with inbox variants
-- **UI Controls** (17) - Interface elements
-- **Social & Community** (15) - Including mic and headphones
-- **Commerce & Shopping** (7) - E-commerce elements
-- **System & Status** (20) - Including power and toggle states
-- **Forms & Input** (6) - Authentication
-- **Layout & Structure** (8) - Layout components
-- **Devices & Technology** (11) - Device types
-- **Text & Typography** (8) - Text formatting
-- **Weather** (8) - Sun, moon, clouds, rain, snow, etc.
-- **Development** (10) - Git, terminal, bug, package
-- **Tools & Utilities** (20+) - Scissors, feather, wrench, etc.
-- **Filled Variants** (15) - heart, star, bookmark, circle, alerts, etc.
+The checked-in manifest says **0.1.0**; npm `latest` is **0.6.0**. Neither npm version's recorded `gitHead` equals the source commit above. Installing `@spexop/icons` from npm therefore does **not** reproduce this checkout. Release provenance and redistribution clearance remain open; no new package is published by this documentation update.
 
-## Installation
+For local source evaluation in a disposable directory:
 
-```bash
-# Using pnpm (recommended)
-pnpm add @spexop/icons
-
-# Using npm
-npm install @spexop/icons
-
-# Using yarn
-yarn add @spexop/icons
-```
-
-## Usage
-
-### Basic Usage
-
-```tsx
-import { Home, User, Settings, Heart, HeartFilled, StarFilled } from '@spexop/icons';
-
-function App() {
-  return (
-    <div>
-      {/* Stroke icons (default) */}
-      <Home />
-      <User size={32} />
-      <Settings color="#3b82f6" />
-      
-      {/* Filled variants */}
-      <HeartFilled color="#ef4444" />
-      <StarFilled color="#f59e0b" />
-      
-      {/* Mix and match */}
-      <Heart strokeWidth={1.5} />
-    </div>
-  );
-}
-```
-
-### With Props
-
-All icons accept the following props:
-
-```tsx
-import { Search } from '@spexop/icons';
-
-function SearchBar() {
-  return (
-    <Search
-      size={24}           // Size in pixels (default: 24)
-      color="currentColor" // Color (default: "currentColor")
-      title="Search"      // Accessible title
-      className="icon"    // Additional CSS class
-      strokeWidth={2}     // Customize stroke width
-    />
-  );
-}
-```
-
-### Custom Styling
-
-Icons inherit the color from their parent's `color` CSS property by default:
-
-```tsx
-<div style={{ color: '#ef4444' }}>
-  <Home /> {/* Will be red */}
-</div>
-```
-
-Or style them directly:
-
-```css
-.icon {
-  color: #3b82f6;
-  transition: color 0.2s;
-}
-
-.icon:hover {
-  color: #2563eb;
-}
-```
-
-## Adding New Icons
-
-1. Add your SVG files to the `assets/icons/` directory
-2. Run the build script: `pnpm run build:icons`
-3. Icons will be automatically generated as React components
-
-### Icon Naming Convention
-
-- File names should be in kebab-case: `arrow-right.svg`
-- They'll be converted to PascalCase components: `ArrowRight`
-
-## Development
-
-```bash
-# Install dependencies
-pnpm install
-
-# Build icons from SVG files
-pnpm run build:icons
-
-# Build the library
-pnpm run build
-
-# Watch mode for development
-pnpm run dev
-
-# Type checking
+```sh
+git clone https://github.com/olmstedian/spexop-icons.git
+cd spexop-icons
+git checkout 717b06f760d3c89f8141494647763e99d1304ae9
+pnpm install --frozen-lockfile --ignore-scripts
 pnpm run typecheck
-
-# Linting
 pnpm run lint
+pnpm run build
+npm pack --ignore-scripts
 ```
 
-## Publishing
+The declared package manager is pnpm 8.15.0. Build and evaluate locally; do not treat the commands as clearance to redistribute unresolved assets. A local tarball can be installed into a separate React consumer with `npm install /absolute/path/to/spexop-icons-0.1.0.tgz`. This checks the source build, not npm 0.6.0.
 
-The package is configured for automatic publishing:
+Do not import `@spexop/icons/styles.css`: the source manifest declares that path, but the verified build does not produce it. The package metadata also contains an obsolete repository URL; correcting package metadata is a separate change.
 
-```bash
-# This will run the build automatically before publishing
-pnpm publish
-```
+## React and TypeScript example
 
-## Project Structure
+```tsx
+import * as React from 'react';
+import { Home, StarFilled, User, type IconProps } from '@spexop/icons';
 
-```bash
-@spexop/icons/
-├── assets/
-│   └── icons/              # Source SVG files
-├── src/
-│   ├── icons/              # Generated icon components
-│   ├── Icon.tsx            # Base Icon component
-│   ├── types.ts            # TypeScript types
-│   ├── utils.ts            # Utility functions
-│   └── index.ts            # Main entry point
-├── scripts/
-│   └── build-icons.ts      # Icon generation script
-├── dist/                   # Build output (git ignored)
-├── package.json
-├── tsconfig.json
-└── tsup.config.ts
-```
+const homeProps: IconProps = { size: 32, title: 'Home', color: '#123456' };
 
-## Icon Component API
-
-### IconProps
-
-```typescript
-interface IconProps extends React.SVGProps<SVGSVGElement> {
-  size?: number | string;    // Default: 24
-  color?: string;            // Default: "currentColor"
-  title?: string;            // For accessibility
-  className?: string;
+export function Example() {
+  return <div><Home {...homeProps} /><StarFilled size={24} /><User size={20} /></div>;
 }
 ```
 
-## Browser Support
+Icons accept SVG props plus `size`, `color`, `title` and `className`, and use forwarded SVG refs. A title produces `role="img"` and a `<title>`; untitled icons are decorative (`aria-hidden="true"`). Test the surrounding UI with your actual accessibility requirements. The manifest declares React >=16.8; this review exercised React 18.3.1 only. Consumers of the generated declaration file need TypeScript `esModuleInterop` (or an equivalent compatible configuration).
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+## License and attribution review
 
-## License
+The repository contains an [MIT license](LICENSE), but that alone does not establish the provenance of every SVG. The SPX-OSS-002 comparison found **205 of 262 SVGs** with the same child shapes and attributes as `feather-icons@4.29.2` when root styling is ignored. Feather's Cole Bemis copyright and MIT notice must be retained in applicable redistribution. See [third-party notices](THIRD_PARTY_NOTICES.md).
 
-MIT
+The remaining **57 SVGs**, including unresolved brand/logo sources, still require provenance and rights review. Trademark rights are separate from a software license. **This review does not clear the complete icon collection for a new publication.** Existing assets and package versions are unchanged.
 
-## Contributing
+## Project and support
 
-Contributions are welcome! Please ensure all icons:
+Spexop UI is being rebuilt around Design Foundation, an experimental Design Contract hypothesis, and Independent Verification under development. CLI/MCP tools are in development; there is no claim of a released verification product.
 
-- Are properly optimized
-- Follow the naming conventions
-- Include appropriate licensing information
+[Sponsorship](https://github.com/sponsors/spexop-ui) supports free open-source maintenance and development. It does not include custom development, priority features, an SLA, paid support, a Qos license or product decision rights.
 
----
-
-**Built by Spexop**  
-Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
-📧 <ccakar@spexop.com>  
-🌐 [www.spexop.com](https://www.spexop.com)  
-📦 [GitHub](https://github.com/spexop/icons)
+The [Spexop organization website](https://spexop.com) is scheduled for a complete rebuild. Use the [organization profile](https://github.com/spexop-ui) for current Spexop UI status. Historical readiness/publishing documents in this repository are retained as records and do not authorize a release.

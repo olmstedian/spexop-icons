@@ -1,3 +1,5 @@
+> **Historical document — not current release guidance.** See [README](README.md) and [2026-10-24 verification](VERIFICATION.md) for current counts, source/npm differences, build evidence and unresolved licensing. Earlier production-ready, browser, bundle-size and publishing claims below have not been revalidated and do not authorize publication.
+
 # Publishing Guide
 
 This guide covers how to publish @spexop/icons to npm and maintain the GitHub repository.
@@ -104,7 +106,7 @@ pnpm pack --dry-run
    ```
 
 4. **Create GitHub Release**
-   - Go to <https://github.com/spexop/icons/releases>
+   - Go to <https://github.com/olmstedian/spexop-icons/releases>
    - Click "Draft a new release"
    - Select the tag you just created
    - Title: "v0.1.0 - Initial Release"
@@ -132,7 +134,7 @@ pnpm pack --dry-run
    git add .
    git commit -m "feat: initial release v0.1.0 - 262 icons"
    git branch -M main
-    git remote add origin https://github.com/spexop/icons.git
+    git remote add origin https://github.com/olmstedian/spexop-icons.git
    git push -u origin main
    ```
 
@@ -252,4 +254,4 @@ Follow [Semantic Versioning](https://semver.org/):
 **Built by Spexop**  
 Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
 📧 <ccakar@spexop.com>  
-🌐 [www.spexop.com](https://www.spexop.com)
+🌐 [www.spexop.com](https://spexop.com)

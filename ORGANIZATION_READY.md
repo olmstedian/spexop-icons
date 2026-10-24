@@ -1,3 +1,5 @@
+> **Historical document — not current release guidance.** See [README](README.md) and [2026-10-24 verification](VERIFICATION.md) for current counts, source/npm differences, build evidence and unresolved licensing. Earlier production-ready, browser, bundle-size and publishing claims below have not been revalidated and do not authorize publication.
+
 # ✅ SPEXOP ORGANIZATION - PUBLISH READY
 
 ## 🎉 Organization URLs Updated Successfully
@@ -13,9 +15,9 @@
 ## ✅ Updates Completed
 
 ### Package Metadata
-- ✅ Repository: `https://github.com/spexop/icons`
-- ✅ Homepage: `https://github.com/spexop/icons#readme`
-- ✅ Bugs: `https://github.com/spexop/icons/issues`
+- ✅ Repository: `https://github.com/olmstedian/spexop-icons`
+- ✅ Homepage: `https://github.com/olmstedian/spexop-icons#readme`
+- ✅ Bugs: `https://github.com/olmstedian/spexop-icons/issues`
 - ✅ Author: Cuneyt Cakar (individual attribution maintained)
 - ✅ npm scope: `@spexop/icons` (organization scope)
 
@@ -80,7 +82,7 @@ git commit -m "feat: initial release v0.1.0 - 262 professional icons
 "
 
 # Connect to Spexop organization repository
-git remote add origin https://github.com/spexop/icons.git
+git remote add origin https://github.com/olmstedian/spexop-icons.git
 git branch -M main
 git push -u origin main
 
@@ -107,7 +109,7 @@ npm info @spexop/icons
 
 ### Step 4: Create GitHub Release
 
-1. Visit: https://github.com/spexop/icons/releases/new
+1. Visit: https://github.com/olmstedian/spexop-icons/releases/new
 2. Choose tag: `v0.1.0`
 3. Release title: `v0.1.0 - Initial Release`
 4. Copy description from CHANGELOG.md (lines 8-65)
@@ -159,9 +161,9 @@ package/
 ## 🎯 URLs After Publishing
 
 - **npm**: https://www.npmjs.com/package/@spexop/icons
-- **GitHub**: https://github.com/spexop/icons
-- **Issues**: https://github.com/spexop/icons/issues
-- **Releases**: https://github.com/spexop/icons/releases
+- **GitHub**: https://github.com/olmstedian/spexop-icons
+- **Issues**: https://github.com/olmstedian/spexop-icons/issues
+- **Releases**: https://github.com/olmstedian/spexop-icons/releases
 
 ---
 
@@ -189,5 +191,5 @@ All systems green. Package is ready for publication to:
 **Built by Spexop**  
 Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
 📧 <ccakar@spexop.com>  
-🌐 [www.spexop.com](https://www.spexop.com)  
-📦 [GitHub](https://github.com/spexop/icons)
+🌐 [spexop.com](https://spexop.com)
+📦 [GitHub](https://github.com/olmstedian/spexop-icons)

@@ -116,6 +116,6 @@ If you have questions or need help, please:
 **Built by Spexop**  
 Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
 📧 <ccakar@spexop.com>  
-🌐 [www.spexop.com](https://www.spexop.com)
+🌐 [www.spexop.com](https://spexop.com)
 
 Thank you for contributing to Spexop Icons! 🎨

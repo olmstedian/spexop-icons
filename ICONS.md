@@ -1,3 +1,5 @@
+> **Historical document — not current release guidance.** See [README](README.md) and [2026-10-24 verification](VERIFICATION.md) for current counts, source/npm differences, build evidence and unresolved licensing. Earlier production-ready, browser, bundle-size and publishing claims below have not been revalidated and do not authorize publication.
+
 # Icon Catalog
 
 @spexop/icons provides **262 carefully curated icons** with a minimal, contemporary design. All icons are optimized, mobile-friendly, and UI/UX focused.
@@ -433,7 +435,7 @@ All icons follow these conventions:
 Need an icon that's not in the library?
 
 1. Check if a similar icon exists that could work
-2. Open a [Feature Request](https://github.com/spexop/icons/issues/new?template=feature_request.md)
+2. Open a [Feature Request](https://github.com/olmstedian/spexop-icons/issues/new?template=feature_request.md)
 3. Or submit a PR following the [Contributing Guide](./CONTRIBUTING.md)
 
 ---
@@ -446,11 +448,11 @@ View all icons interactively:
 open index.html
 ```
 
-Or visit the [GitHub repository](https://github.com/spexop/icons) for live preview.
+Or visit the [GitHub repository](https://github.com/olmstedian/spexop-icons) for live preview.
 
 ---
 
 **Built by Spexop**  
 Cuneyt Cakar ([@olmstedian](https://github.com/olmstedian))  
 📧 <ccakar@spexop.com>  
-🌐 [www.spexop.com](https://www.spexop.com)
+🌐 [www.spexop.com](https://spexop.com)
