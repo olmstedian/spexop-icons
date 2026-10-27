@@ -62,8 +62,8 @@ The remaining **57 SVGs**, including unresolved brand/logo sources, still requir
 
 ## Project and support
 
-Spexop UI is being rebuilt around Design Foundation, an experimental Design Contract hypothesis, and Independent Verification under development. CLI/MCP tools are in development; there is no claim of a released verification product.
+Spexop is developing a local-first, free OSS UI/UX desktop companion. The existing coding agent owns planning and design decisions; bounded user-connected API workers are intended for routine UI work, with independent checks and local progress reporting. The current internal prototype uses test doubles and a browser status panel. A real API worker benchmark, packaged desktop application, and external product acceptance remain open. Theme and Foundation tools are preserved engineering work; this legacy icons repository is not a companion installer.
 
 [Sponsorship](https://github.com/sponsors/spexop-ui) supports free open-source maintenance and development. It does not include custom development, priority features, an SLA, paid support, a Qos license or product decision rights.
 
-The [Spexop organization website](https://spexop.com) is scheduled for a complete rebuild. Use the [organization profile](https://github.com/spexop-ui) for current Spexop UI status. Historical readiness/publishing documents in this repository are retained as records and do not authorize a release.
+See the [Spexop organization website](https://spexop.com) and [organization profile](https://github.com/spexop-ui) for public updates. The new companion implementation is currently private; provider API costs and data policies are separate from the free Spexop software. Historical readiness/publishing documents in this repository are retained as records and do not authorize a release.
